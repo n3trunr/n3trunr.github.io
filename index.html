@@ -14,10 +14,12 @@
         display: block;
       }
     </style>
+
   </head>
 
-  <body class="my-5 bg-dark">
-    <div class="container">
+  <body class="my-5 bg-dark d-flex flex-column h-100">
+    <div class=" flex-fill">
+      <div class="container">
         <div class="row">
             <div class="col calendar-title text-white" style="text-align: center; font-size: 2em;">I cannot wait for week 26</div>
             <div class="button-container d-flex">
@@ -29,46 +31,55 @@
                 </div>
               </div>
         </div>
+      </div>
+
+      <div class="container calendar-container my-5" id="life-calendar">
+          <iframe src="https://calendar.google.com/calendar/embed?src=ay10f2c%40gmail.com&ctz=America%2FNew_York&mode=WEEK" style="border: 10" width="1000" height="700" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="container calendar-container my-5" id="employment-calendar">
+          <iframe src="https://calendar.google.com/calendar/embed?src=employ.abhisheky%40gmail.com&ctz=America%2FNew_York&mode=WEEK" style="border: 10" width="1000" height="700" frameborder="0" scrolling="no"></iframe>
+      </div>
     </div>
-
-    <div class="container calendar-container my-5" id="life-calendar">
-        <iframe src="https://calendar.google.com/calendar/embed?src=ay10f2c%40gmail.com&ctz=America%2FNew_York&mode=WEEK" style="border: 10" width="1000" height="700" frameborder="0" scrolling="no"></iframe>
-    </div>
-
-    <div class="container calendar-container my-5" id="employment-calendar">
-        <iframe src="https://calendar.google.com/calendar/embed?src=employ.abhisheky%40gmail.com&ctz=America%2FNew_York&mode=WEEK" style="border: 10" width="1000" height="700" frameborder="0" scrolling="no"></iframe>
-    </div>
-
-
-
-
 
     <script>
-        var lifeButton = document.getElementById("life-button");
-        var lifeCalendar = document.getElementById("life-calendar");
-  
-        var employmentButton = document.getElementById("employment-button");
-        var employmentCalendar = document.getElementById("employment-calendar");
-  
-        lifeButton.addEventListener("click", function() {
-          if (lifeCalendar.classList.contains("active")) {
-              lifeCalendar.classList.remove("active");
-              employmentCalendar.classList.remove("active");
-          } else {
-              lifeCalendar.classList.add("active");
-              employmentCalendar.classList.remove("active");
-          }
-        });
-  
-        employmentButton.addEventListener("click", function() {
-          if (employmentCalendar.classList.contains("active")) {
-              employmentCalendar.classList.remove("active");
-              lifeCalendar.classList.remove("active");
-          } else {
-              employmentCalendar.classList.add("active");
-              lifeCalendar.classList.remove("active");
-          }
-        });
-      </script>
+      var lifeButton = document.getElementById("life-button");
+      var lifeCalendar = document.getElementById("life-calendar");
+
+      var employmentButton = document.getElementById("employment-button");
+      var employmentCalendar = document.getElementById("employment-calendar");
+
+      lifeCalendar.classList.add("active");
+
+      lifeButton.addEventListener("click", function() {
+        if (lifeCalendar.classList.contains("active")) {
+
+        } else {
+            lifeCalendar.classList.add("active");
+            employmentCalendar.classList.remove("active");
+        }
+      });
+
+      employmentButton.addEventListener("click", function() {
+        if (employmentCalendar.classList.contains("active")) {
+
+        } else {
+            employmentCalendar.classList.add("active");
+            lifeCalendar.classList.remove("active");
+        }
+      });
+    </script>
+
   </body>
+
+    <footer class="navbar-fixed-bottom bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <a href="https://github.com/n3trunr/n3trunr.github.io" target="_blank">Visit the source code</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </html>
